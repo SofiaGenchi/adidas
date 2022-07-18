@@ -2,7 +2,7 @@ const CartWidget = () => {
     return (
         <>
             <ion-icon name="bag-outline"></ion-icon>
-            <span>0</span>
+            <span>4</span>
         </>
         
     );
