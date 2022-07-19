@@ -8,7 +8,7 @@ import CartWidget from './CartWidget';
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="" variant="light">
+    <Navbar className='navBar' collapseOnSelect expand="lg" bg="" variant="light">
       <Container>
         <Navbar.Brand href="#home"><img className='logo' src='/adidas.png'></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -3,20 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-a.nav-link{
-    color: black;
-    ion-icon {
-        font-size: x-large;
+.navBar{
+    a.nav-link{
+        color: black;
+        ion-icon {
+            font-size: x-large;
+        }
+        span {
+            padding: 0 3px;
+            background-color: grey;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            position: relative;
+            top: -15px;
+        }
     }
-    span {
-        padding: 0 3px;
-        background-color: grey;
-        color: white;
-        font-weight: bold;
-        border-radius: 6px;
-        position: relative;
-        top: -15px;
-    }
+    
 }
 
