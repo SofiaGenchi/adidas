@@ -1,0 +1,18 @@
+div.count{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    .card-body {
+        background-color: greenyellow;
+        margin: auto 0;
+        display: inline-grid;
+        justify-content: center;
+        justify-items: center;
+        .card-title, p {
+            text-align: center;
+        }
+        .btn {
+            margin: 5px 0;
+        }
+    }
+}
