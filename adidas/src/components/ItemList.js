@@ -1,7 +1,10 @@
+import Item from "./Item";
+import '../scss/_ItemList.scss'
+
 const ItemList = ({listaProductos}) => {
     return (
-        <div>
-            {listaProductos.map((producto)=> <p key={producto.id}>{producto.name}</p>)}
+        <div className="itemList">
+            {listaProductos.map((producto)=> <Item key={producto.id} producto={producto}/>)}
         </div>
     )
 }
