@@ -40,7 +40,7 @@ export const data = new Promise((resolve, reject) => {
         if(condition) {
             resolve(productos)
         }else{
-            reject('salio mal no hay sushi')
+            reject('La pagina no funciona, intente mas tarde.')
         }
 
     },3000)

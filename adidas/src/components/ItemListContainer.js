@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import '../scss/_itemListContainer.scss'
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { data } from "../mock/FakeApi";
 
 const ItemListContainer = () => {
+
     const [loading, setLoading] = useState(true)
     const[listaProductos, setListaProductos] = useState([])
     const[mensaje, setMensaje] = useState(false)
@@ -23,12 +23,9 @@ const ItemListContainer = () => {
     return (
         <>
         <div>
-            <h1>Adidas</h1>
+            {loading ? <h1>Adidas</h1> : <ItemList listaProductos={listaProductos}/>}
             {mensaje && <span>{mensaje}</span>}
             {/* <ItemCount initial={1} stock={8} onAdd={onAdd}/> */}
-        </div>
-        <div>
-            {loading ? <p>Cargando...</p> : <ItemList listaProductos={listaProductos}/>}
         </div>
         </>
         

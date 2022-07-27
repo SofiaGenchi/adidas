@@ -10,7 +10,8 @@ const Item = ({producto}) => {
             <Card.Img variant="top" src={producto.img} alt={producto.name} />
             <Card.Body>
                 <Card.Title>{producto.name}</Card.Title>
-                <Card.Text>{producto.description}</Card.Text>
+                {/* <Card.Text>{producto.description}</Card.Text> */}
+                <Button variant="primary">Ver detalles del producto</Button>
                 <p>$ {producto.price}</p>
                 <p>Stock disponible: {producto.stock}</p>
                 <ItemCount initial={1} stock={producto.stock}/>
