@@ -8,7 +8,6 @@ import Card from 'react-bootstrap/Card';
 const ItemDetail = ({productDetail}) => {
     
     const {id, name, description, price, img, stock} = productDetail[0];
-    console.log(name)
     return (
         <>
             <Container>
