@@ -25,7 +25,6 @@ const ItemListContainer = () => {
         <div>
             {loading ? <h1>Adidas</h1> : <ItemList listaProductos={listaProductos}/>}
             {mensaje && <span>{mensaje}</span>}
-            {/* <ItemCount initial={1} stock={8} onAdd={onAdd}/> */}
         </div>
         </>
         

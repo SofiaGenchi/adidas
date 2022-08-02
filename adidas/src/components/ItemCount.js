@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import "../scss/ItemCount.scss";
 
-const ItemCount = ({initial, stock, onAdd}) => {
-  const [contador, setContador] = useState(initial)
+const ItemCount = ({stock, onAdd}) => {
+  const [contador, setContador] = useState(1)
 
   const sumar = () => {
     if (contador < stock) {
@@ -10,19 +12,19 @@ const ItemCount = ({initial, stock, onAdd}) => {
   }
 
   const restar = () => {
-    if (contador > 0) {
+    if (contador > 1 ) {
       setContador(contador - 1)
     }
   }
 
   return (
     <>
-      <div>
-        <button onClick={restar}>-</button>
-        <span>{contador}</span>
-        <button onClick={sumar}>+</button>
+      <div className='divItemCount'>
+        <Button variant="outline-light" size="sm" disabled={contador === 1} onClick={restar}> - </Button>
+        <span className='cantidadContador'> {contador} </span>
+        <Button variant="outline-light" size="sm" disabled={contador === stock} onClick={sumar}> + </Button>
+        <Button className='btnComprar' variant="outline-success" size="sm" onClick={()=>onAdd(contador)}>Comprar</Button>
       </div>
-      <button onClick={()=>onAdd(contador)}>Comprar</button>
     </>
     
   )

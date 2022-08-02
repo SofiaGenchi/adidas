@@ -1,7 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 
 const Item = ({producto}) => {
@@ -10,16 +10,14 @@ const Item = ({producto}) => {
             <Card.Img variant="top" src={producto.img} alt={producto.name} />
             <Card.Body>
                 <Card.Title>{producto.name}</Card.Title>
-                {/* <Card.Text>{producto.description}</Card.Text> */}
-                <Button variant="primary">Ver detalles del producto</Button>
-                <p>$ {producto.price}</p>
+                <h4>$ {producto.price}</h4>
                 <p>Stock disponible: {producto.stock}</p>
-                <ItemCount initial={1} stock={producto.stock}/>
-                {/* <Button variant="primary">Comprar</Button> */}
+                <Link to={`/item/${producto.id}`}>
+                <Button variant="secondary">Detalles del producto</Button>
+                </Link>
             </Card.Body>
         </Card>
     )
 }
-
 
 export default Item;

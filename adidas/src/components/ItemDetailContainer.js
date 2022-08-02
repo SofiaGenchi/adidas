@@ -1,26 +1,34 @@
-import { useEffect, useState } from "react";
-import { data } from "../mock/FakeApi";
+import React from "react";
+import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
+import { productos } from "../mock/FakeApi";
+import "../scss/_itemDetailContainer.scss"
+
 
 const ItemDetailContainer = () => {
+    const [loadig, setLoading] = useState(true);
+    const [productDetail, setProductDetail] = useState({});
+    const {id} = useParams();
 
-    const [item, setItem] = useState()
-
+    const getItem = new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(productos.filter(product => product.id === parseInt(id)))
+        },2000)
+    })
 
     useEffect(() => {
-        console.log('aca el componente ya esta en el')
-        data()
-        .then((producto)=> {
-            setItem(producto)
-        })
-        .catch((error)=> console.log(error))
-    }, [])
-
-
+        getItem
+        .then((response) => setProductDetail(response))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false))
+    }, [id])
 
     return (
         <>
-            <ItemDetail item={item}/>
+        <div className="itemDetailContainer">
+            {loadig ? "Cargando Producto..." : <ItemDetail productDetail={productDetail}/>}
+        </div>
         </>
     )
 }
