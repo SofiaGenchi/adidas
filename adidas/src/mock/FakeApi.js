@@ -1,9 +1,9 @@
 export const productos = [
     {   id: 1,
-        name: 'CAMISETA TITULAR BOCA JUNIORS 22/23',
-        description: 'Esta camiseta titular de Boca Juniors adidas irradia la energía de principios de los 90 con su cuello distintivo y la franja cosida en el pecho. En contraste con sus detalles retro, los modernos paneles de mesh y la tecnología de absorción AEROREADY se combinan para mantener cómodos a los hinchas del club. El escudo tejido es el toque final que completa este estilo de fútbol.',
+        name: 'CAMISETA TITULAR ARGENTINA 22',
+        description: '100% Argentina. Diseñada para los hinchas, ofrece comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY. Los detalles en la parte interior trasera del cuello están inspirados en la bandera nacional que los jugadores representan con tanto orgullo.',
         price: 14.999,
-        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4fcfb797d457430eaccaaec200dafeb7_9366/Camiseta_Titular_Boca_Juniors_22-23_Azul_HE6323_01_laydown.jpg',
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/de18f39b42bd4e1ebb57aec901802be1_9366/Camiseta_Titular_Argentina_22_Blanco_HB9215_21_model.jpg',
         stock: 8,
         category: 'camiseta'
     },
