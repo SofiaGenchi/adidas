@@ -4,13 +4,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import '../scss/ItemDetail.scss'
 
 const ItemDetail = ({productDetail}) => {
     
     const {id, name, description, price, img, stock} = productDetail[0];
     return (
         <>
-            <Container>
+            <Container className="itemDetail">
                 <Row>
                     <Col>
                         <Card style={{ width: '25rem', margin: '10px auto' }}>

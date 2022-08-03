@@ -1,7 +1,14 @@
 .itemDetailContainer {
+    margin: 0 auto;
+    height: 60vh;
     width: 65vw;
-    height: 61vh;
-    background: rgb(0, 0, 0);
-    margin: 5% auto;
-    color: white;
+    h1{
+        background: white;
+        font-weight: 600;
+        font-size: 150px;
+        text-align: center;
+        margin: 15% auto;
+        font-style: italic;
+        color: black;
+    }
 }
