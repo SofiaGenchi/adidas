@@ -20,7 +20,6 @@ const ItemListContainer = () => {
     useEffect(() => {
         data
         .then((res) => {
-            setListaProductos(res);
             const productList = res;
             const categoyItems = [];
             for(let i = 0; i < productList.length; i++){
@@ -28,13 +27,13 @@ const ItemListContainer = () => {
                     categoyItems.push(productList[i]);
                 }
             }
-            console.log(categoyItems)
+            setListaProductos(categoyItems.length >= 1 ? categoyItems : productList);
         }).catch((error) => {
             console.log(error);
         }).finally(() => {
             setLoading(false);
         })
-    }, [])
+    }, [categoryId])
 
     return (
         <>
