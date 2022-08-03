@@ -1,0 +1,21 @@
+.item {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    .cardBody {
+        background: white;
+        .card-title{
+            color: black;
+            font-size: medium;
+        }
+        h4 {
+            font-size: large;
+        }
+        .itemButton {
+            background: black;
+        }
+        .itemButton:hover {
+            background: gray;
+        }
+        
+    }
+}

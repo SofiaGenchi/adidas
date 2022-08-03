@@ -22,7 +22,7 @@ const ItemListContainer = () => {
 
     return (
         <>
-        <div>
+        <div className="divListContainer">
             {loading ? <h1>Adidas</h1> : <ItemList listaProductos={listaProductos}/>}
             {mensaje && <span>{mensaje}</span>}
         </div>

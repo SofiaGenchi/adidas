@@ -14,9 +14,9 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav className='me-auto'>
-              <Nav.Link href="#features">Hombre</Nav.Link>
-              <Nav.Link href="#pricing">Mujer</Nav.Link>
-              <Nav.Link href="#pricing">Niños</Nav.Link>
+              <Nav.Link href="#features">Camisetas</Nav.Link>
+              <Nav.Link href="#pricing">Buzos</Nav.Link>
+              <Nav.Link href="#pricing">Camperas</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link>
