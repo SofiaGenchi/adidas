@@ -213,6 +213,42 @@ export const productos = [
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f1110b3b198d4641bcedad5e00410769_9366/Campera_R.Y.V._de_Poliester_Granate_H11474_21_model.jpg',
         stock: 10,
         category: 'camperas'
+    },
+    {
+        id: 26,
+        name: 'CAMPERA DEPORTIVA ADICOLOR TRIFOLIO SHATTERED',
+        description: 'Estilo clásico, pero más llamativo que nunca. Ponete esta campera deportiva adidas cuando querés un look casual con el toque de audacia necesario para destacar tu confianza. El tejido iridiscente y el Trifolio cortado y fragmentado le imprimen modernidad a la tradición.',
+        price: 36.999,
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e2abd92a1dfe46caa2e2ad6b00dbe1f8_9366/Campera_Deportiva_Adicolor_Trifolio_Shattered_Multicolor_H35655_21_model.jpg',
+        stock: 16,
+        category: 'camperas'
+    },
+    {
+        id: 27,
+        name: 'CAMPERA DEPORTIVA R.Y.V SARGA DE ALGODON',
+        description: 'Sí, los días fríos requieren una capa extra de protección. Pero una campera debe llevar tu look a otro nivel mientras te mantiene cómodo. Esta cumple con ambas con una silueta arraigada en el legado de adidas y un tejido resistente que envuelve tu cuerpo como un sueño. El cierre expuesto brillante destaca la vibra minimalista.',
+        price: 28.999,
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/446ce5a3e12a4f258b83ad24002dc1f9_9366/Campera_Deportiva_R.Y.V._Sarga_de_Algodon_Verde_H11459_41_detail.jpg',
+        stock: 4,
+        category: 'camperas'
+    },
+    {
+        id: 28,
+        name: 'CAMPERA PUFFER ADVENTURE',
+        description: 'Salí de casa preparado para lo inesperado. Esta campera adidas siempre lo está. El acolchado abrigador, la capucha removible y el cuello alto te mantienen cómodo, permitiéndote disfrutar de la aventura en todo momento y lugar, sin importar el clima. El estampado de camuflaje te pone en modo exploración. Algo ya muy natural para vos.',
+        price: 51.999,
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/3bcdb4ba3d3644e9b9fbac5400599002_9366/Campera_Puffer_Adventure_Multicolor_GE1286_41_detail.jpg',
+        stock: 28,
+        category: 'camperas'
+    },
+    {
+        id: 29,
+        name: 'CAMPERA ESSENTIALS INSULATED BOMBER',
+        description: 'Ess Ins Bo Jkt es un nuevo producto para Hombre de adidas.',
+        price: 23.999,
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1673e3d907d24e17b03cadc801316d72_9366/Campera_Essentials_Insulated_Bomber_Verde_H55346_25_model.jpg',
+        stock: 42,
+        category: 'camperas'
     }
 ]
 
