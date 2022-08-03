@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
+import {Link} from 'react-router-dom';
 
 
 function NavBar() {
@@ -14,9 +15,9 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
           <Nav className='me-auto'>
-              <Nav.Link href="#features">Camisetas</Nav.Link>
-              <Nav.Link href="#pricing">Buzos</Nav.Link>
-              <Nav.Link href="#pricing">Camperas</Nav.Link>
+              <Link to={`/category/camisetas`}>Camisetas</Link>
+              <Link to={`/category/buzos`}>Buzos</Link>
+              <Link to={`/category/camperas`}>Camperas</Link>
           </Nav>
           <Nav>
             <Nav.Link>

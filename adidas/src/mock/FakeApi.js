@@ -14,7 +14,7 @@ export const productos = [
         price: 14.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b30e2d27fcac4efeb84aaea500a0829f_9366/Camiseta_Titular_Ajax_Amsterdam_22-23_Rojo_H58243_21_model.jpg',
         stock: 4,
-        category: 'camiseta'
+        category: 'camisetas'
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ export const productos = [
         price: 14.999,
         img: 'https://assets.adidas.com/images/h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/ef37b79dac5f41da8dd8ae8a009d8814_9366/Camiseta_Uniforme_de_Titular_Juventus_22-23_Blanco_H38907_21_model.jpg',
         stock: 24,
-        category: 'camiseta'
+        category: 'camisetas'
     },
     {
         id: 4,
@@ -32,7 +32,7 @@ export const productos = [
         price: 14.999,
         img: 'https://assets.adidas.com/images/h_320,f_auto,q_auto,fl_lossy,c_fill,g_auto/bfac4aab68ec4ddb82dcad2c0074a997_9366/Camiseta_Titular_Manchester_United_21-22_Rojo_H31447_21_model.jpg',
         stock: 10,
-        category: 'camiseta'
+        category: 'camisetas'
     },
     {
         id: 5,
@@ -41,7 +41,7 @@ export const productos = [
         price: 25.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b503ae10553c4cf6ab92adcd017b417b_9366/Buzo_con_Capucha_Dame_8_Innovation_Negro_HE5464_25_model.jpg',
         stock: 12,
-        category: 'buzo'
+        category: 'buzos'
     },
     {
         id: 6,
@@ -50,7 +50,7 @@ export const productos = [
         price: 24.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0fad30cbc5754833ab2eadb6008492c5_9366/Buzo_con_Capucha_Adicolor_Classics_3_Tiras_Azul_HE9476_21_model.jpg',
         stock: 32,
-        category: 'buzo'
+        category: 'buzos'
     },
     {
         id: 7,
@@ -59,7 +59,7 @@ export const productos = [
         price: 28.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d2595d90c92f4d009ddcae6901122383_9366/Buzo_con_Capucha_adidas_Rekive_Rosa_HK7312_21_model.jpg',
         stock: 40,
-        category: 'buzo'
+        category: 'buzos'
     },
     {
         id: 8,
@@ -68,7 +68,7 @@ export const productos = [
         price: 28.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a5920fa70644bf295acad92012ff801_9366/Buzo_con_Capucha_Adicolor_Essentials_Trifolio_Gris_HE9436_21_model.jpg',
         stock: 1,
-        category: 'buzo'
+        category: 'buzos'
     },
     {
         id: 9,
@@ -77,7 +77,7 @@ export const productos = [
         price: 25.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4f52de7392649ebaa25ad9f00d329e4_9366/Campera_Teamgeist_FC_Bayern_Tejida_Rojo_H67173_21_model.jpg',
         stock: 9,
-        category: 'campera'
+        category: 'camperas'
     },
     {
         id: 10,
@@ -86,7 +86,7 @@ export const productos = [
         price: 43.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/faec18930c324f70a765ad380098bf93_9366/Campera_Acolchada_Reversible_adidas_Adventure_Negro_H13573_21_model.jpg',
         stock: 1,
-        category: 'campera'
+        category: 'camperas'
     },
     {
         id: 11,
@@ -95,7 +95,7 @@ export const productos = [
         price: 22.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5f7c8fc6897b41e9b305ad1201226a17_9366/Campera_Anthem_Tiro_Boca_Juniors_Azul_GU9588_21_model.jpg',
         stock: 4,
-        category: 'campera'
+        category: 'camperas'
     },
     {
         id: 12,
@@ -104,7 +104,7 @@ export const productos = [
         price: 32.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f1110b3b198d4641bcedad5e00410769_9366/Campera_R.Y.V._de_Poliester_Granate_H11474_21_model.jpg',
         stock: 10,
-        category: 'campera'
+        category: 'camperas'
     }
 ]
 
