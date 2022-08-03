@@ -5,7 +5,7 @@ export const productos = [
         price: 14.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/de18f39b42bd4e1ebb57aec901802be1_9366/Camiseta_Titular_Argentina_22_Blanco_HB9215_21_model.jpg',
         stock: 8,
-        category: 'camiseta'
+        category: 'camisetas'
     },
     {
         id: 2,

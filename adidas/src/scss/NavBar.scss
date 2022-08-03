@@ -8,6 +8,10 @@
         color: black;
         ion-icon {
             font-size: x-large;
+            color: black;
+        }
+        ion-icon:hover {
+            color: gray;
         }
     }
     a{
@@ -19,6 +23,5 @@
     a:hover {
         color: grey;
     }
-    
 }
 

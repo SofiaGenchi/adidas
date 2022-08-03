@@ -21,7 +21,14 @@ const ItemListContainer = () => {
         data
         .then((res) => {
             setListaProductos(res);
-            console.log(res)
+            const productList = res;
+            const categoyItems = [];
+            for(let i = 0; i < productList.length; i++){
+                if (productList[i].category === categoryId) {
+                    categoyItems.push(productList[i]);
+                }
+            }
+            console.log(categoyItems)
         }).catch((error) => {
             console.log(error);
         }).finally(() => {
