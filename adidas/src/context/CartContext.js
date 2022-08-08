@@ -10,10 +10,12 @@ const CartProvider = ({children}) => {
 
     const isInCart = () => {}
   
-    const cleanCart = () => {}
+    const cleanCart = () => {
+        setCart([]);
+    }
   
-    const addToCart = () => {
-        setCart([])
+    const addToCart = (item, quantify) => {
+        setCart([...cart, {...item, quantify}])
     }
   
     const removeToCart = (item, quantify) => {

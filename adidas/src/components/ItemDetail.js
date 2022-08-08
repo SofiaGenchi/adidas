@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ItemCount from "./ItemCount";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,6 +7,12 @@ import Card from 'react-bootstrap/Card';
 import '../scss/ItemDetail.scss'
 
 const ItemDetail = ({productDetail}) => {
+
+    const [amountItem, setAmountItem] = useState(0);
+    const onAdd = (amount) => {
+        setAmountItem(amount);
+        console.log(amount);
+    }
     
     const {id, name, description, price, img, stock} = productDetail[0];
     return (
@@ -26,7 +32,7 @@ const ItemDetail = ({productDetail}) => {
                         <p>En Stock: {stock}</p>
                     </div>
                     <div className="count">
-                        <ItemCount stock={stock}/>
+                        <ItemCount stock={stock} onAdd={onAdd}/>
                     </div>
                     </Col>
                 </Row>
