@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 const CartWidget = () => {
-    
+    const valueToShare = useContext(CartContext)
+    console.log({valueToShare})
     return (
         <>
             <ion-icon name="bag-outline"></ion-icon>
-            <span></span>
+            <span>{valueToShare.cantInCart}</span>
         </>
         
     );

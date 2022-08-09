@@ -1,17 +1,21 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import ItemCount from "./ItemCount";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import '../scss/ItemDetail.scss'
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail = ({productDetail}) => {
+
+    const { addToCart } = useContext(CartContext);
 
     const [amountItem, setAmountItem] = useState(0);
     const onAdd = (amount) => {
         setAmountItem(amount);
-        console.log(amount);
+        console.log('Add:', amount);
+        addToCart(productDetail, amount)
     }
     
     const {id, name, description, price, img, stock} = productDetail[0];
