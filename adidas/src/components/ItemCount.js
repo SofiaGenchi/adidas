@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 
 const ItemCount = ({stock, onAdd}) => {
-  const [contador, setContador] = useState(1)
+  const [contador, setContador] = useState(0)
 
   const sumar = () => {
     if (contador < stock) {
@@ -14,7 +14,7 @@ const ItemCount = ({stock, onAdd}) => {
   }
 
   const restar = () => {
-    if (contador > 1 ) {
+    if (contador >= 0 ) {
       setContador(contador - 1)
     }
   }
@@ -22,10 +22,10 @@ const ItemCount = ({stock, onAdd}) => {
   return (
     <>
       <div className='divItemCount'>
-        <Button variant="outline-light" size="sm" disabled={contador === 1} onClick={restar}> - </Button>
+        <Button variant="outline-light" size="sm" disabled={contador === 0} onClick={restar}> - </Button>
         <span className='cantidadContador'> {contador} </span>
         <Button variant="outline-light" size="sm" disabled={contador === stock} onClick={sumar}> + </Button>
-        <Link to={`/cart`}>
+        <Link hidden={contador <= 0} to={`/cart`}>
           <Button className='btnComprar' variant="outline-success" size="sm" onClick={()=>onAdd(contador)}>Comprar</Button>
         </Link>
       </div>
