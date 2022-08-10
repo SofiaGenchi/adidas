@@ -9,12 +9,14 @@ const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
     
-    const isInCart = () => {}
+    /**Verificar si esta en el carrito */
+    const isInCart = (id) => cart.find(producto => producto.id === id) ? true : false
   
     const cleanCart = () => {
         setCart([]);
     }
   
+    /**Agregar producto al carrito */
     const addToCart = (item, quantity) => {
         console.log({item, quantity});
         //verifico si el carrito esta vacio
@@ -28,8 +30,10 @@ const CartProvider = ({children}) => {
         }
 
         //logica de duplicado y consistente
+
         //obtenemos el indice del elemento si estuvies duplicado
         const itemDuplicateIndex = cart.findIndex((itemInTheCart) => itemInTheCart.id === item.id)
+
         //si es mayor o igual a 0, el item esta duplicado en el carrito
         if (itemDuplicateIndex >= 0) {
 
@@ -44,7 +48,6 @@ const CartProvider = ({children}) => {
 
             //actualizamos el borrador con el item con canitdad actualziada
             cartDraft[itemDuplicateIndex] = itemToUpdate
-
 
             //actualizamos el carrito con el carrrito borrador actualziado
             setCart(cartDraft)
@@ -67,7 +70,7 @@ const CartProvider = ({children}) => {
         }
     }
   
-    const removeToCart = (item, quantity) => {}
+    const removeToCart = (id) => setCart(cart.filter(producto => producto.id !== id))
 
     const valueToShare = {
         cart,
@@ -77,6 +80,7 @@ const CartProvider = ({children}) => {
         removeToCart,
         cantInCart: cart.length
     }
+    console.log('Hay cantidad en el carrito:', valueToShare.cart.length);
 
     return (
         <CartContext.Provider value={valueToShare}>

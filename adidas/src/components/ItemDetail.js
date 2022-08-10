@@ -14,7 +14,6 @@ const ItemDetail = ({productDetail}) => {
     const [amountItem, setAmountItem] = useState(0);
     const onAdd = (amount) => {
         setAmountItem(amount);
-        console.log('Add:', amount);
         addToCart(productDetail, amount)
     }
     
