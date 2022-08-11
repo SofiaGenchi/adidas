@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const CartWidget = () => {
-    const valueToShare = useContext(CartContext)
-    console.log({valueToShare})
+    
+    const { cart } = useContext(CartContext);
+    console.log('Cantidad de productos en el carrito:', cart.length, cart)
+
     return (
         <>
             <ion-icon name="bag-outline"></ion-icon>
-            <span>{valueToShare.cantInCart}</span>
+            <span>{cart.length}</span>
         </>
         
     );
