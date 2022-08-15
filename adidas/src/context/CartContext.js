@@ -12,8 +12,30 @@ const CartProvider = ({children}) => {
         //verifica si el item esta en el carrito
     };
 
+    const removeItem = itemId => {
+        setCart(cart.filter(item => item.id !== itemId));
+    };
+
+    const clearCart = () => {
+        setCart([]);
+    };
+
+    const isInCart = itemId => {
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].id === itemId) {
+                return true;
+            };
+        };
+    };
+
     return(
-        <CartContext.Provider value={{cart, addToCart}}>
+        <CartContext.Provider value={{
+            cart,
+            addToCart,
+            removeItem,
+            clearCart,
+            isInCart
+            }}>
             {children}
         </CartContext.Provider>
     );
