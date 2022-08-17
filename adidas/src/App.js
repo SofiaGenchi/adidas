@@ -4,8 +4,24 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartProvider from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import { useEffect } from 'react';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 function App() {
+
+  useEffect(() => {
+    const db = getFirestore();
+
+    const docRef = doc(db, 'Items', 'TX0lwgxtmyvLvw0Jul1t');
+    getDoc(docRef)
+      .then((snapshot) => {
+        if(snapshot.exists()) {
+          console.log(snapshot.id);
+          console.log(snapshot.data());
+        }
+      })
+      .catch((error) => console.error(error));
+  }, [])
   return (
       <BrowserRouter>
         <CartProvider>
