@@ -22,7 +22,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         const db = getFirestore();
 
-        const itemsCollection = collection(db, 'Items');
+        const itemsCollection = collection(db, 'items');
 
 
         if(categoryId){
