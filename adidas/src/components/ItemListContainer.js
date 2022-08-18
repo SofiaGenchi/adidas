@@ -3,7 +3,7 @@ import '../scss/_itemListContainer.scss'
 import ItemList from "./ItemList";
 import { data } from "../mock/FakeApi";
 import { useParams } from "react-router-dom";
-import { collection, doc, getDocs, getFiresore, getFirestore } from "firebase/firestore";
+import { collection, doc, getDocs, getFiresore, getFirestore, query, where } from "firebase/firestore";
 
 
 
@@ -25,17 +25,46 @@ const ItemListContainer = () => {
         const itemsCollection = collection(db, 'Items');
 
 
-        getDocs(itemsCollection)
-        .then((snapshot) => {
-            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-            console.log(data);
-            setListaProductos(data);
-        })
-        .catch((error) => {
-            console.log(error);
-        }).finally(() => {
-            setLoading(false);
-        })
+        // getDocs(itemsCollection)
+        // .then((snapshot) => {
+        //     const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+        //     console.log(data);
+        //     setListaProductos(data);
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // }).finally(() => {
+        //     setLoading(false);
+        // })
+
+        if(categoryId){
+            const q = query(itemsCollection, where('category', '==', categoryId));
+
+            getDocs(q)
+            .then((snapshot) => {
+                // setListaProductos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
+                const d = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id}))
+                setListaProductos(d);
+            })
+            .catch((error) => {
+                console.log(error);
+            }).finally(() => {
+                setLoading(false);
+            })
+        } else {
+            getDocs(itemsCollection)
+                .then((snapshot) => {
+                    setListaProductos(
+                        snapshot.docs.map((doc) => ({...doc.data(), id: doc.id}))
+                    );
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        }
     }, [categoryId])
 
 

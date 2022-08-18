@@ -181,7 +181,7 @@ export const productos = [
     {
         id: 22,
         name: 'CAMPERA TEAMGEIST FC BAYERN TEJIDA',
-        description: ' Esta campera de fútbol del FC Bayern se remonta al verano de 2006 para conmemorar los 15 años de adidas Teamgeist. Su tejido suave garantiza comodidad, mientras que las aberturas para los pulgares te permiten experimentar un mayor abrigo en los días más fríos. El escudo del club bordado y el clásico logo Teamgeist se encargan de que cada detalle cuente.',
+        description: 'Esta campera de fútbol del FC Bayern se remonta al verano de 2006 para conmemorar los 15 años de adidas Teamgeist. Su tejido suave garantiza comodidad, mientras que las aberturas para los pulgares te permiten experimentar un mayor abrigo en los días más fríos. El escudo del club bordado y el clásico logo Teamgeist se encargan de que cada detalle cuente.',
         price: 25.999,
         img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e4f52de7392649ebaa25ad9f00d329e4_9366/Campera_Teamgeist_FC_Bayern_Tejida_Rojo_H67173_21_model.jpg',
         stock: 9,

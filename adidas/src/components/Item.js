@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import '../scss/Item.scss'
 
 
+
 const Item = ({producto}) => {
     return (
         <Link style={{ textDecoration: 'none', color: 'black' }} to={`item/${producto.id}`}>
