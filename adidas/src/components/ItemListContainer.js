@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react"
 import '../scss/_itemListContainer.scss'
 import ItemList from "./ItemList";
-import { data } from "../mock/FakeApi";
 import { useParams } from "react-router-dom";
-import { collection, doc, getDocs, getFiresore, getFirestore, query, where } from "firebase/firestore";
+import { collection, doc, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 
 
@@ -12,8 +11,9 @@ const ItemListContainer = () => {
     const {categoryId} = useParams();
 
     const [loading, setLoading] = useState(true)
-    const[listaProductos, setListaProductos] = useState([])
-    const[mensaje, setMensaje] = useState(false)
+    const [listaProductos, setListaProductos] = useState([])
+    const [mensaje, setMensaje] = useState(false)
+
     const onAdd = (cantidad) => {
         setMensaje(`Agregaste ${cantidad} items en el carro`)
     }
