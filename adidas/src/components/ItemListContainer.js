@@ -25,24 +25,11 @@ const ItemListContainer = () => {
         const itemsCollection = collection(db, 'Items');
 
 
-        // getDocs(itemsCollection)
-        // .then((snapshot) => {
-        //     const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-        //     console.log(data);
-        //     setListaProductos(data);
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        // }).finally(() => {
-        //     setLoading(false);
-        // })
-
         if(categoryId){
             const q = query(itemsCollection, where('category', '==', categoryId));
 
             getDocs(q)
             .then((snapshot) => {
-                // setListaProductos(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id})));
                 const d = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id}))
                 setListaProductos(d);
             })
@@ -67,24 +54,6 @@ const ItemListContainer = () => {
         }
     }, [categoryId])
 
-
-    // useEffect(() => {
-    //     data
-    //     .then((res) => {
-    //         const productList = res;
-    //         const categoyItems = [];
-    //         for(let i = 0; i < productList.length; i++){
-    //             if (productList[i].category === categoryId) {
-    //                 categoyItems.push(productList[i]);
-    //             }
-    //         }
-    //         setListaProductos(categoyItems.length >= 1 ? categoyItems : productList);
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     }).finally(() => {
-    //         setLoading(false);
-    //     })
-    // }, [categoryId])
 
     return (
         <>
