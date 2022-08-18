@@ -1,6 +1,38 @@
 .itemDetail {
-    background: rgb(0, 0, 0);width: 65vw;
-    height: 60vh;
-    margin: 5% auto;
-    color: white;
+    // background: rgb(0, 0, 0);width: 65vw;
+    // height: 60vh;
+    // margin: 5% auto;
+    // color: white;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+    .itemCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 860px;
+        background: black;
+        color: white;
+        border-radius: 10px;
+        .img{
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .itemCard {
+        flex-direction: column;
+        width: 100%;
+        h2, h3{
+            font-size: larger;
+        }
+        p {
+            font-size: small;
+        }
+    }
 }

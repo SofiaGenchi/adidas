@@ -23,9 +23,9 @@ const ItemDetail = ({productDetail}) => {
     return (
         <>
             <Container className="itemDetail">
-                <Row>
-                    <Col>
-                        <Card style={{ width: '25rem', margin: '10px auto' }}>
+                <Row className="itemCard">
+                    <Col className="img">
+                        <Card >
                             <Card.Img variant="top" src={img} />
                         </Card>
                     </Col>
