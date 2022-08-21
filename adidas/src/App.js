@@ -1,26 +1,12 @@
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartProvider from './context/CartContext';
 import Cart from './components/Cart/Cart';
-import Checkout from './components/Checkout';
+import Checkout from './components/Checkout/Checkout';
 
 function App() {
-
-  // useEffect(() => {
-  //   const db = getFiresore();
-
-  //   const docRef = doc(db, 'Items', 'TX0lwgxtmyvLvw0Jul1t');
-  //   getDoc(docRef)
-  //     .then((snapshot) => {
-  //       if(snapshot.exists()) {
-  //         console.log(snapshot.id);
-  //         console.log(snapshot.data());
-  //       }
-  //     })
-  //     .catch((error) => console.error(error));
-  // }, [])
   return (
       <BrowserRouter>
         <CartProvider>

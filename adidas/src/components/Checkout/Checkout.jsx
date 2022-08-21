@@ -3,7 +3,7 @@ import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 export const useCart = () => useContext(CartContext)
 const Checkout = () => {

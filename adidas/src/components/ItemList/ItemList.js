@@ -1,5 +1,5 @@
-import Item from "./Item";
-import '../scss/_ItemList.scss'
+import Item from "../Items/Item";
+import './_ItemList.scss'
 
 const ItemList = ({listaProductos}) => {
     return (

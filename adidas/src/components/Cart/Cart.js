@@ -1,31 +1,19 @@
-import {useContext} from 'react';
-import {CartContext} from '../../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-
 import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
-import { useCart } from '../Checkout';
+import { useCart } from '../Checkout/Checkout';
 
 const Cart = () => {
 
     const navegar = useNavigate();
-
-
-    // const {cart, removeItem, clearCart} = useContext(CartContext);
-    // let total = 0;
-
-    // for (let i = 0; i < cart.length; i++){
-    //     total += cart[i].price;
-    // }
-
     const {cart, emptyCart, cartTotal, removeItem} = useCart();
-
     const [show, setShow] = useState(true);
+
     return(
         <div className='cartSection'>
             <Container>

@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import "../scss/ItemCount.scss";
+import "./ItemCount.scss";
 import {Link} from 'react-router-dom';
 
 
 const ItemCount = ({stock, onAdd, setContador, contador}) => {
-  // const [contador, setContador] = useState(0)
-
   const sumar = () => {
     if (contador < stock) {
       setContador(contador + 1)

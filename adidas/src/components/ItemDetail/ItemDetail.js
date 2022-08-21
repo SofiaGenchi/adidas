@@ -1,11 +1,11 @@
 import React, {useContext, useState} from "react";
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import '../scss/ItemDetail.scss'
-import { useCart } from "./Checkout";
+import './ItemDetail.scss'
+import { useCart } from "../Checkout/Checkout";
 import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({productDetail}) => {
