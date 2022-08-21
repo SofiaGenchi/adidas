@@ -2,6 +2,7 @@ import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/fire
 import React from "react";
 import { useContext } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 export const useCart = () => useContext(CartContext)
@@ -45,7 +46,7 @@ const finalizarCompra = (e) => {
     }
 }
 
-
+const navegar = useNavigate();
     return(
         <>
         {!orderId
@@ -61,7 +62,7 @@ const finalizarCompra = (e) => {
         :<div>
             <h2>Muchas Gracias por tu compra!</h2>
             <h3>Su orden es: {orderId}</h3>
-            <button>Volver al inicio</button>
+            <button onClick={() => navegar('*')}>Volver al inicio</button>
         </div>
         }
         </>

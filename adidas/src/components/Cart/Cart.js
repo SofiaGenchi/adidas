@@ -9,20 +9,21 @@ import Button from 'react-bootstrap/Button';
 
 import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
+import { useCart } from '../Checkout';
 
 const Cart = () => {
 
     const navegar = useNavigate();
 
 
-    const {cart, removeItem, clearCart} = useContext(CartContext);
-    let total = 0;
+    // const {cart, removeItem, clearCart} = useContext(CartContext);
+    // let total = 0;
 
-    for (let i = 0; i < cart.length; i++){
-        total += cart[i].price;
-    }
+    // for (let i = 0; i < cart.length; i++){
+    //     total += cart[i].price;
+    // }
 
-
+    const {cart, emptyCart, cartTotal, removeItem} = useCart();
 
     const [show, setShow] = useState(true);
     return(
@@ -56,7 +57,7 @@ const Cart = () => {
                     <Card border="dark" style={{ width: '18rem', display: cart.length < 1 && 'none' }}>
                         <Card.Header>
                             <div style={{display: cart.length > 0 ? "inherit" : 'none'}}>
-                            <Button onClick={() => clearCart()} variant="outline-danger">Eliminar Carrito</Button>
+                            <Button onClick={emptyCart} variant="outline-danger">Eliminar Carrito</Button>
                             </div>
                         </Card.Header>
                         <Card.Body>
@@ -67,12 +68,12 @@ const Cart = () => {
                                         <Card.Title>{product.name}</Card.Title>
                                         <Card.Img variant="top" src={product.img}/>
                                         <Card.Text>${product.price}</Card.Text>
-                                        <Button variant="outline-danger" onClick={()=> removeItem(product.id)}>Eliminar</Button>
+                                        <Button variant="outline-danger" onClick={removeItem}>Eliminar</Button>
                                     </div>
                                 </>
                             );
                         })}
-                        <Card.Text style={{display: cart.length < 1 && "none"}}>Total: ${total}</Card.Text>
+                        <Card.Text style={{display: cart.length < 1 && "none"}}>Total a pagar: ${cartTotal()}</Card.Text>
                         <div className="cart-payment" style={{display: cart.length < 1 && "none"}}>
                             <Button onClick={() => navegar('/checkout')} variant="outline-secondary">Comprar</Button>
                         </div>

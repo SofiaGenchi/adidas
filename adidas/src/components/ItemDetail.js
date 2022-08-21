@@ -5,21 +5,29 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import '../scss/ItemDetail.scss'
-import { CartContext } from "../context/CartContext";
+import { useCart } from "./Checkout";
+import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({productDetail}) => {
 
-    const { addToCart } = useContext(CartContext);
+    const [compra, setCompra] = useState(false);
+    const [contador, setContador] = useState(1);
+    const {name, id, description, stock, img, price} = productDetail;
+    const {addToCart} = useCart();
+    const navegar = useNavigate();
 
-    const [amountItem, setAmountItem] = useState(0);
-
-
-    const onAdd = (amount) => {
-        setAmountItem(amount);
-        addToCart(productDetail[0], amount)
+    const onAdd = () => {
+        let itemAComprar = {
+            id,
+            name,
+            img,
+            stock,
+            price,
+            quantity: contador
+        }
+        setCompra(true)
+        addToCart(itemAComprar)
     }
-    
-    const {id, name, description, price, img, stock} = productDetail[0];
     return (
         <>
             <Container className="itemDetail">
@@ -36,9 +44,11 @@ const ItemDetail = ({productDetail}) => {
                         <p>{description}</p>
                         <p>En Stock: {stock}</p>
                     </div>
-                    <div className="count">
-                        <ItemCount stock={stock} onAdd={onAdd}/>
-                    </div>
+                    { !compra ? <ItemCount stock={stock} onAdd={onAdd} contador={contador} setContador={setContador} />
+                    :<div>
+                        <button  className='btn btn-success'onClick={()=> navegar('/')}>Seguir Comprando</button>
+                        <button className='btn btn-secondary'onClick={()=> navegar('/cart')}>Ir al Carrito</button>
+                    </div>}
                     </Col>
                 </Row>
             </Container>
