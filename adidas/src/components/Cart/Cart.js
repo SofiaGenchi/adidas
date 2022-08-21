@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {CartContext} from '../../context/CartContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,6 +11,10 @@ import React, { useState } from 'react';
 import Alert from 'react-bootstrap/Alert';
 
 const Cart = () => {
+
+    const navegar = useNavigate();
+
+
     const {cart, removeItem, clearCart} = useContext(CartContext);
     let total = 0;
 
@@ -70,7 +74,7 @@ const Cart = () => {
                         })}
                         <Card.Text style={{display: cart.length < 1 && "none"}}>Total: ${total}</Card.Text>
                         <div className="cart-payment" style={{display: cart.length < 1 && "none"}}>
-                            <Button variant="outline-secondary">Comprar</Button>
+                            <Button onClick={() => navegar('/checkout')} variant="outline-secondary">Comprar</Button>
                         </div>
                         </Card.Body>
                     </Card>

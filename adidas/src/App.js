@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartProvider from './context/CartContext';
 import Cart from './components/Cart/Cart';
-import { useEffect } from 'react';
-import { doc, getDoc, getFiresore } from 'firebase/firestore';
+import Checkout from './components/Checkout';
 
 function App() {
 
@@ -32,6 +31,7 @@ function App() {
               <Route path='/item/:id' element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />}/>
               <Route path='*' element={<ItemListContainer />}/>
+              <Route path='/checkout' element={<Checkout />} />
             </Routes>
         </CartProvider>
       </BrowserRouter>

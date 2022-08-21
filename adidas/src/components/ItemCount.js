@@ -26,7 +26,7 @@ const ItemCount = ({stock, onAdd}) => {
         <span className='cantidadContador'> {contador} </span>
         <Button variant="outline-light" size="sm" disabled={contador === stock} onClick={sumar}> + </Button>
         <Link hidden={contador <= 0} to={`/cart`}>
-          <Button className='btnComprar' variant="outline-success" size="sm" onClick={()=>onAdd(contador)}>Comprar</Button>
+          <Button className='btnComprar' variant="outline-success" size="sm" onClick={()=>onAdd(contador)}>Agregar</Button>
         </Link>
       </div>
     </>
