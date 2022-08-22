@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import "./Checkout.scss"
 
 export const useCart = () => useContext(CartContext)
 const Checkout = () => {
@@ -50,14 +51,17 @@ const navegar = useNavigate();
     return(
         <>
         {!orderId
-            ?<div>
-            <h2>Checkout</h2>
-            <form onSubmit={finalizarCompra}>
+        ?<div className="divFinalizar">
+            <h2>Finalizar compra</h2>
+            <form className="form" onSubmit={finalizarCompra}>
                 <input type="text" placeholder="Nombre Completo" name="name" onChange={datosComprador}/>
                 <input type="number" placeholder="Numero de telefono" name="teledono" onChange={datosComprador}/>
                 <input type="text" placeholder="tuemail@email.com" name="email" onChange={datosComprador}/>
                 <button type='submit'>Finalizar Compra</button>
             </form>
+            <div className="divider"></div>
+            <h5>Al finalizar se le enviara un email con los detalles de su compra y el pago de la misma.</h5>
+            <p>Muchas gracias por confiar en nosotros!</p>
         </div>
         :<div>
             <h2>Muchas Gracias por tu compra!</h2>
