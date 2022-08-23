@@ -3,3 +3,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+    .itemList {
+        justify-content: center;
+    }
+}

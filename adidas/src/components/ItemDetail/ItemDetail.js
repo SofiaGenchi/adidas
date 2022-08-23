@@ -30,8 +30,8 @@ const ItemDetail = ({productDetail}) => {
                 <img className="img" src={img}></img>
                 <div>
                 <h4>{name}</h4>
-                <h6>${price}</h6>
                 <p>{description}</p>
+                <h6>${price}</h6>
                 <p>En Stock: {stock}</p>
                 { !compra ? <ItemCount stock={stock} onAdd={onAdd} contador={contador} setContador={setContador} />
                     :<div>

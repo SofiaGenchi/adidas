@@ -16,6 +16,7 @@ function NavBar() {
           <Nav className="me-auto"></Nav>
           <Nav className='me-auto'>
               <Link to={`/category/camisetas`}>Camisetas</Link>
+              <Link to={`/category/remeras`}>Remeras</Link>
               <Link to={`/category/buzos`}>Buzos</Link>
               <Link to={`/category/camperas`}>Camperas</Link>
               <Link to={`/category/unixes`}>Unixes</Link>

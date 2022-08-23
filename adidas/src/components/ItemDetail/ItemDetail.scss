@@ -24,14 +24,22 @@
 }
 
 @media (max-width: 800px) {
-    .itemCard {
+    .itemDetail {
+        height: 90vh;
+        display: flex;
         flex-direction: column;
-        width: 100%;
-        h2, h3{
-            font-size: larger;
+        align-items: center;
+        justify-content: center;
+        .img {
+            max-width: 90%;
         }
-        p {
-            font-size: small;
+        div {
+            h4 {
+                font-size: small;
+            }
+            p {
+                font-size: small;
+            }
         }
     }
 }

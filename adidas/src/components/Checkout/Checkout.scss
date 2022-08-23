@@ -16,7 +16,9 @@
         flex-direction: column;
         padding: 20px 0;
         input {
-            margin: 10px 30px;
+            margin: 10px auto;
+            height: 2rem;
+            width: 30vw;
         }
         button {
             padding: 10px 20px;
@@ -51,5 +53,17 @@
         font-size: small;
         color: blue;
         font-style: italic;
+    }
+}
+
+@media (max-width: 800px) {
+    .divFinalizar {
+        width: auto;
+        .form {
+            input {
+                height: 2rem;
+                width: -webkit-fill-available;
+            }
+        }
     }
 }

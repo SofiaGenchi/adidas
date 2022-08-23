@@ -11,3 +11,10 @@
         color: black;
     }
 }
+@media (max-width: 800px) {
+    .divListContainer{
+        h1{
+            font-size: xx-large;
+        }
+    }
+}

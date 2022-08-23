@@ -80,3 +80,31 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .cart {
+        .cartTotal {
+            margin-left: 0;
+            .cardBody {
+                .cartProduct {
+                    flex-direction: column;
+                    align-items: center;
+                    width: auto;
+                    margin: 1rem;
+                    justify-content: center;
+                    h5 {
+                        font-size: small;
+                    }
+                }
+            }
+            .tuCarrito {
+                width: 100vw;
+                height: auto;
+                .pago {
+                    width: 100vw;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

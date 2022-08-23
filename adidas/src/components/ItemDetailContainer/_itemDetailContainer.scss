@@ -12,3 +12,11 @@
         color: black;
     }
 }
+
+@media (max-width: 800px) {
+    .itemDetailContainer{
+        h1{
+            font-size: xx-large;
+        }
+    }
+}

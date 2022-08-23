@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import "./CartWidget.scss"
+import "./cartWidget.scss";
 
 const CartWidget = () => {
     
