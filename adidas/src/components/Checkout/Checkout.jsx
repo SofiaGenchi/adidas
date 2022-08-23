@@ -63,9 +63,9 @@ const navegar = useNavigate();
             <h5>Al finalizar se le enviara un email con los detalles de su compra y el pago de la misma.</h5>
             <p>Muchas gracias por confiar en nosotros!</p>
         </div>
-        :<div>
+        :<div className="compraFinalizada">
             <h2>Muchas Gracias por tu compra!</h2>
-            <h3>Su orden es: {orderId}</h3>
+            <h3>Su orden es: <span>{orderId}</span></h3>
             <button onClick={() => navegar('*')}>Volver al inicio</button>
         </div>
         }
