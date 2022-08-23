@@ -10,7 +10,7 @@ function NavBar() {
   return (
     <Navbar className='navBar' collapseOnSelect expand="lg" bg="" variant="light">
       <Container>
-        <Navbar.Brand href="/"><img className='logo' src='/adidas.png'></img></Navbar.Brand>
+        <Link to={`/`}><img className='logo' src='/adidas.png'></img></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
@@ -18,6 +18,7 @@ function NavBar() {
               <Link to={`/category/camisetas`}>Camisetas</Link>
               <Link to={`/category/buzos`}>Buzos</Link>
               <Link to={`/category/camperas`}>Camperas</Link>
+              <Link to={`/category/unixes`}>Unixes</Link>
           </Nav>
           <Nav>
             <Nav.Link>

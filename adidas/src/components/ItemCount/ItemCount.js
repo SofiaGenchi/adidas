@@ -19,9 +19,9 @@ const ItemCount = ({stock, onAdd, setContador, contador}) => {
   return (
     <>
       <div className='divItemCount'>
-        <Button variant="outline-light" size="sm" disabled={contador === 0} onClick={restar}> - </Button>
+        <Button className='btn' variant="outline-dark" size="sm" disabled={contador === 0} onClick={restar}> - </Button>
         <span className='cantidadContador'>{contador}</span>
-        <Button variant="outline-light" size="sm" disabled={contador === stock} onClick={sumar}> + </Button>
+        <Button className='btn' variant="outline-dark" size="sm" disabled={contador === stock} onClick={sumar}> + </Button>
         <Link hidden={contador <= 0} to={`/cart`}>
           <Button className='btnComprar' variant="outline-success" size="sm" onClick={() => onAdd(contador)}>Agregar</Button>
         </Link>

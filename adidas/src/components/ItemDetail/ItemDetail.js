@@ -1,9 +1,5 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import './ItemDetail.scss'
 import { useCart } from "../Checkout/Checkout";
 import { useNavigate } from "react-router-dom";
@@ -30,28 +26,20 @@ const ItemDetail = ({productDetail}) => {
     }
     return (
         <>
-            <Container className="itemDetail">
-                <Row className="itemCard">
-                    <Col className="img">
-                        <Card >
-                            <Card.Img variant="top" src={img} />
-                        </Card>
-                    </Col>
-                    <Col>
-                    <div style={{margin: '10px auto'}}>
-                        <h2>{name}</h2>
-                        <h3>${price}</h3>
-                        <p>{description}</p>
-                        <p>En Stock: {stock}</p>
-                    </div>
-                    { !compra ? <ItemCount stock={stock} onAdd={onAdd} contador={contador} setContador={setContador} />
+            <div className="itemDetail">
+                <img className="img" src={img}></img>
+                <div>
+                <h4>{name}</h4>
+                <h6>${price}</h6>
+                <p>{description}</p>
+                <p>En Stock: {stock}</p>
+                { !compra ? <ItemCount stock={stock} onAdd={onAdd} contador={contador} setContador={setContador} />
                     :<div>
                         <button  className='btn btn-success'onClick={()=> navegar('/')}>Seguir Comprando</button>
                         <button className='btn btn-secondary'onClick={()=> navegar('/cart')}>Ir al Carrito</button>
                     </div>}
-                    </Col>
-                </Row>
-            </Container>
+                </div>
+            </div>
         </>
     )
 }
