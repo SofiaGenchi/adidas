@@ -1,0 +1,82 @@
+.cart {
+    .carritoVacio {
+        height: 40vh;
+        width: 80vw;
+        margin: 0 auto;
+        button {
+            border: none;
+            background: black;
+            height: 3em;
+            width: 7em;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+        }
+        button:hover{
+            background: grey;
+            color: black;
+        }
+    }
+    .cartTotal{
+        margin-left: 8%;
+        .tuCarrito {
+            height: 45vh;
+            width: 45vw;
+            h2 {
+                font-weight: 700;
+            }
+            p {
+                span {
+                    font-weight: 700;
+                }
+            }
+            .btnEliminar {
+                margin: 10px 0;
+                font-size: small;
+                
+            }
+            .pago {
+                background-color: gainsboro;
+                height: 15vh;
+                width: 45vw;
+                padding: 15px;
+            }
+        }
+        .cardBody {
+            .cartProduct{
+                display: flex;
+                flex-direction: row;
+                width: 50vw;
+                height: 40vh;
+                margin: 10px 0;
+                border: 1px black solid;
+                p {
+                    margin: 0 20px;
+                }
+                img {
+                    max-width: 50%;
+                }
+                a {
+                    font-size: larger;
+                }
+                a:hover{
+                    color: red;
+                }
+            }
+            .btnPagar {
+                background-color: black;
+                border: none;
+                color: white;
+                border-radius: 10px;
+                font-weight: 500;
+                height: 45px;
+                width: 8rem;
+                text-transform: uppercase;
+            }
+            .btnPagar:hover {
+                background: grey;
+                color: black;
+            }
+        }
+    }
+}

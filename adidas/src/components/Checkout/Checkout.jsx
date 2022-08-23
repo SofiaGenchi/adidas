@@ -55,7 +55,7 @@ const navegar = useNavigate();
             <h2>Finalizar compra</h2>
             <form className="form" onSubmit={finalizarCompra}>
                 <input type="text" placeholder="Nombre Completo" name="name" onChange={datosComprador}/>
-                <input type="number" placeholder="Numero de telefono" name="teledono" onChange={datosComprador}/>
+                <input type="number" placeholder="Numero de telefono" name="telefono" onChange={datosComprador}/>
                 <input type="text" placeholder="tuemail@email.com" name="email" onChange={datosComprador}/>
                 <button type='submit'>Finalizar Compra</button>
             </form>

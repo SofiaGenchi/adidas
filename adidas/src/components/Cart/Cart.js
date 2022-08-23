@@ -1,76 +1,50 @@
 import { Link, useNavigate } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
 import { useCart } from '../Checkout/Checkout';
+import "./Cart.scss"
 
 const Cart = () => {
 
     const navegar = useNavigate();
-    const {cart, emptyCart, cartTotal, removeItem} = useCart();
-    const [show, setShow] = useState(true);
+    const {cart, emptyCart, cartTotal, removeItem, cartQuantity} = useCart();
 
     return(
-        <div className='cartSection'>
-            <Container>
-            <Row>
-                <Col xs></Col>
-
-                <Col xs={{ order: 12 }}>
-                    <Alert show={show} variant="success" style={{display: cart.length > 0 && 'none'}}>
-                                    <Alert.Heading>El carrito esta vacio!</Alert.Heading>
-                                    <p>
-                                    Todavia no has seleccionado ninguna prenda.
-                                    </p>
-                                    <hr />
-                                    <div className="d-flex justify-content-end">
-                                        <Link to={`/`} className="co-clear">
-                                        <Button onClick={() => setShow(false)} variant="outline-secondary">
-                                    Continuar comprando
-                                    </Button>
-                                        </Link>
-                                    
-                                    </div>
-                                    <Link to={`/`} className="co-clear">
-                                        {!show && <Button onClick={() => setShow(true)}>Continuar comprando</Button>}
-                                    </Link>
-                        </Alert>
-
-                                
-
-                    <Card border="dark" style={{ width: '18rem', display: cart.length < 1 && 'none' }}>
-                        <Card.Header>
-                            <div style={{display: cart.length > 0 ? "inherit" : 'none'}}>
-                            <Button onClick={emptyCart} variant="outline-danger">Eliminar Carrito</Button>
-                            </div>
-                        </Card.Header>
-                        <Card.Body>
-                        {cart.map((product, index) => {
-                            return(
-                                <>
-                                    <div className='cartProduct' key={index}>
-                                        <Card.Title>{product.name}</Card.Title>
-                                        <Card.Img variant="top" src={product.img}/>
-                                        <Card.Text>${product.price}</Card.Text>
-                                        <Button variant="outline-danger" onClick={removeItem}>Eliminar</Button>
-                                    </div>
-                                </>
-                            );
-                        })}
-                        <Card.Text style={{display: cart.length < 1 && "none"}}>Total a pagar: ${cartTotal()}</Card.Text>
-                        <div className="cart-payment" style={{display: cart.length < 1 && "none"}}>
-                            <Button onClick={() => navegar('/checkout')} variant="outline-secondary">Comprar</Button>
-                        </div>
-                        </Card.Body>
-                    </Card>
-                </Col>
-        <Col xs={{ order: 1 }}></Col>
-      </Row>
-    </Container>
+        <div className='cart'>
+            <div className='carritoVacio' style={{display: cart.length > 0 && 'none'}}>
+                <h2>El carrito está vacío</h2>
+                <p>Una vez que añadas algo a tu carrito, aparecerá acá. ¿Listo para empezar?</p>
+                <Link to={`/`}>
+                <button>Empezar</button>
+                </Link>
+            </div>
+            <div className='cartTotal' style={{ display: cart.length < 1 && 'none' }}>
+                <div className='tuCarrito'>
+                    <h2>TU CARRITO</h2>
+                    <p>TOTAL ({cartQuantity()} producto) <span>${cartTotal()}</span></p>
+                    <p>Los artículos en tu carrito no están reservados. Terminá el proceso de compra ahora para hacerte con ellos.</p>
+                    <Button className='btnEliminar' onClick={emptyCart} variant="outline-danger">Eliminar Carrito</Button>
+                    <div className='pago'>
+                        <h5>¡COMPRÁ AHORA Y PAGÁ EN 6 CUOTAS!</h5>
+                        <p>Podés pagar con tus tarjetas Visa, MasterCard o American Express, al hacerlo, podrás pagar hasta en 6 cuotas sin interés.</p>
+                    </div>
+                </div>
+                <div className='cardBody'>
+                    {cart.map((product, index) => {
+                        return(
+                            <>
+                                <div className='cartProduct' key={index}>
+                                    <img src={product.img}></img>
+                                    <h5>{product.name}</h5>
+                                    <p>${product.price}</p>
+                                    <a onClick={() => removeItem(product.id)}><ion-icon name="trash-outline"></ion-icon></a>
+                                </div>
+                            </>
+                        );
+                    })}
+                    <button className='btnPagar' onClick={() => navegar('/checkout')}>Ir a pagar</button>
+                </div>
+            </div>
         </div>
     );
 }
