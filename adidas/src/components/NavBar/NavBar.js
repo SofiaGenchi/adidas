@@ -19,7 +19,7 @@ function NavBar() {
               <Link to={`/category/remeras`}>Remeras</Link>
               <Link to={`/category/buzos`}>Buzos</Link>
               <Link to={`/category/camperas`}>Camperas</Link>
-              <Link to={`/category/unixes`}>Unixes</Link>
+              <Link to={`/category/unisex`}>Unisex</Link>
           </Nav>
           <Nav>
             <Nav.Link>
