@@ -16,3 +16,11 @@
         color: white;
     }
 }
+
+@media (max-width: 800px) {
+    .cartWidget {
+        span {
+            right: 275px;
+        }
+    }
+}
