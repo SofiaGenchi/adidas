@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import './_itemListContainer.scss'
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { collection, doc, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 
 
@@ -12,11 +12,6 @@ const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(true)
     const [listaProductos, setListaProductos] = useState([])
-    const [mensaje, setMensaje] = useState(false)
-
-    const onAdd = (cantidad) => {
-        setMensaje(`Agregaste ${cantidad} items en el carro`)
-    }
 
 
     useEffect(() => {
@@ -59,7 +54,6 @@ const ItemListContainer = () => {
         <>
         <div className="divListContainer">
             {loading ? <h1>Adidas</h1> : <ItemList listaProductos={listaProductos}/>}
-            {mensaje && <span>{mensaje}</span>}
         </div>
         </>
         

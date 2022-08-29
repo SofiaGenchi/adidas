@@ -35,8 +35,13 @@ const Cart = () => {
                             <>
                                 <div className='cartProduct' key={index}>
                                     <img src={product.img}></img>
+                                    <div>
                                     <h5>{product.name}</h5>
-                                    <p>${product.price}</p>
+                                    <span>Cantidad: {product.quantity}</span>
+                                    <p>(Precio por unidad ${product.price})</p>
+                                    <p>SubTotal ${product.price * product.quantity}</p>
+                                    </div>
+                                    
                                     <a onClick={() => removeItem(product.id)}><ion-icon name="trash-outline"></ion-icon></a>
                                 </div>
                             </>

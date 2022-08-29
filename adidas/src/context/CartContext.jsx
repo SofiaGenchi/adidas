@@ -29,9 +29,7 @@ const CartProvider = ({children}) => {
         setCart([])
     }
 
-    const removeItem = (id) => {
-        setCart(cart.filter((prod) => prod.id !== id))
-    }
+    const removeItem = (id) => setCart(cart.filter(prod => prod.id !== id))
 
     const cartQuantity = () => {
         return cart.reduce((acc, prod) => acc += prod.quantity, 0)
