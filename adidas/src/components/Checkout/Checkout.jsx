@@ -8,7 +8,6 @@ import "./Checkout.scss"
 
 export const useCart = () => useContext(CartContext)
 const Checkout = () => {
-
     const [comprador, setComprador] = useState({});
     const [orderId, setOrderId] = useState('');
 
@@ -21,29 +20,30 @@ const Checkout = () => {
             [e.target.name]: e.target.value
         })
     }
-console.log(comprador);
-
-
 
 const finalizarCompra = (e) => {
     const db = getFirestore();
     e.preventDefault()
 
-    if(Object.values(comprador).length !== 3){
-        alert('todos los campos son obligatorios')
-    }else{
-    const ventasCollection = collection(db, 'ventas')
-    addDoc(ventasCollection, {
-        comprador,
-        items: cart,
-        total: cartTotal(),
-        date: serverTimestamp()
-    })
-    .then((res) => {
-        setOrderId(res.id)
-        emptyCart()
-    })
-    .catch((error) => console.log(error))
+    if(Object.values(comprador).length !== 4){
+        alert("Todos los campos son obligatorios")
+    }else {
+        if (comprador.email !== comprador.email2){
+            alert("El email es diferente")
+        }else{
+            const ventasCollection = collection(db, 'ventas')
+            addDoc(ventasCollection, {
+                comprador,
+                items: cart,
+                total: cartTotal(),
+                date: serverTimestamp()
+            })
+            .then((res) => {
+                setOrderId(res.id)
+                emptyCart()
+            })
+            .catch((error) => console.log(error))
+        }
     }
 }
 
@@ -56,7 +56,8 @@ const navegar = useNavigate();
             <form className="form" onSubmit={finalizarCompra}>
                 <input type="text" placeholder="Nombre Completo" name="name" onChange={datosComprador}/>
                 <input type="number" placeholder="Numero de telefono" name="telefono" onChange={datosComprador}/>
-                <input type="text" placeholder="tuemail@email.com" name="email" onChange={datosComprador}/>
+                <input id="email" type="email" placeholder="tuemail@email.com" name="email" onChange={datosComprador}/>
+                <input id="email2" type="email" placeholder="tuemail@email.com" name="email2" onChange={datosComprador}/>
                 <button type='submit'>Finalizar Compra</button>
             </form>
             <div className="divider"></div>
