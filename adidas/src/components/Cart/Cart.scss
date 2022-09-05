@@ -43,20 +43,20 @@
             }
         }
         .cardBody {
-            width: 80vw;
+            width: 60vw;
             padding-bottom: 2rem;
             .cartProduct{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin: 10px 0;
+                margin: 5px 0;
                 border: 1px black solid;
                 img {
                     max-width: 30%;
                 }
                 div {
                     text-align: center;
-                    padding: 4rem;
+                    padding: 2rem;
                 }
                 a {
                     font-size: 1.5em;
