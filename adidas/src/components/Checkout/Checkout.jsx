@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import "./Checkout.scss"
+import swal from 'sweetalert';
 
 export const useCart = () => useContext(CartContext)
 const Checkout = () => {
@@ -26,10 +27,10 @@ const finalizarCompra = (e) => {
     e.preventDefault()
 
     if(Object.values(comprador).length !== 4){
-        alert("Todos los campos son obligatorios")
+        swal("Todos los campos son obligatorios", "Por favor complete todos los campos para poder continuar.");
     }else {
         if (comprador.email !== comprador.email2){
-            alert("El email es diferente")
+            swal("Email diferente!", "Por favor coloque el mismo email para poder continuar.");
         }else{
             const ventasCollection = collection(db, 'ventas')
             addDoc(ventasCollection, {
