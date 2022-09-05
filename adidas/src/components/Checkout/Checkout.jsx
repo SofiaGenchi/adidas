@@ -53,7 +53,7 @@ const navegar = useNavigate();
         <>
         {!orderId
         ?<div className="divFinalizar">
-            <h2>Finalizar compra</h2>
+            <h2>Finalizar proceso de compra</h2>
             <form className="form" onSubmit={finalizarCompra}>
                 <input type="text" placeholder="Nombre Completo" name="name" onChange={datosComprador}/>
                 <input type="number" placeholder="Numero de telefono" name="telefono" onChange={datosComprador}/>
