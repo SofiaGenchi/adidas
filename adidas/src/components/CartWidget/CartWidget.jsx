@@ -5,7 +5,7 @@ import "./cartWidget.scss";
 
 const CartWidget = () => {
     
-    const { cart } = useContext(CartContext);
+    const { cart, cartQuantity } = useContext(CartContext);
 
     return (
         <>
@@ -13,7 +13,7 @@ const CartWidget = () => {
                 <Link to={`/cart`}>
                     <ion-icon name="bag-outline"></ion-icon>
                 </Link>
-                <span style={{display: cart.length < 1 && "none"}}>{cart.length}</span>
+                <span style={{display: cart.length < 1 && "none"}}>{cartQuantity()}</span>
             </div>
         </>
         
