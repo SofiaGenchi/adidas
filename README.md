@@ -12,3 +12,4 @@ Gif demo:
 - React-Bootstrap
 - Firebase
 - React-Router-Dom
+- SweetAlert
