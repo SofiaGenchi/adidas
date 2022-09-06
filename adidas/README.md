@@ -3,8 +3,7 @@
 Este es un proyecto para crear una e-commerce con ReactJs.
 Tomando como referencia la pagina oficial de Adidas.
 Gif demo:
-
-![gif-adidas](https://user-images.githubusercontent.com/92803854/182688755-a89b50b9-b400-4dee-843f-a151b37b2c86.gif)
+![adidas-store](https://user-images.githubusercontent.com/92803854/188524382-ad45277d-3b8c-4aa5-9aec-7b8434784e85.gif)
 
 ## Tecnologias:
 - HTML5
